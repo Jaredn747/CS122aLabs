@@ -14,17 +14,18 @@
 module top_tb;
 
 /** declare tb signals below */
-logic clk_tb;
+logic [3:0] tb_bcd; 
+logic [6:0] tb_seg7;
+
 
 /** declare module(s) below */
 top dut                    // declare an inst of top called "dut" (device under test)
 (
     /** hook up tb signals to dut signals */
-    .clk(clk_tb)           // connect dut's clk wire to clk_tb
+    .bcd(tb_bcd),
+    .seg7(tb_seg7)
 );
 
-localparam CLK_PERIOD = /** clk period */;
-always #(CLK_PERIOD/2) clk_tb=~clk_tb;          // toggle clk_tb every #(CLK_PERIOD/2) ticks
 
 initial begin
     $dumpfile("build/top.vcd"); // intermediate file for waveform generation
@@ -33,9 +34,55 @@ end
 
 initial begin
     /** testbench logic goes below */
-    clk_tb<=1'b1;       // sets clk_tb to 1
-    #(CLK_PERIOD*3);    // waits for CLK_PERIOD * 3 ticks
-    $finish;            // end simulation, otherwise it runs indefinitely
+        tb_bcd = 4'd0; 
+        #3;
+    
+        tb_bcd = 4'd1;
+        #3;
+  
+        tb_bcd = 4'd2;
+        #3;
+        
+        tb_bcd = 4'd3;
+        #3;
+
+        tb_bcd = 4'd4;
+        #3;
+
+        tb_bcd = 4'd5;
+        #3;
+
+        tb_bcd = 4'd6;
+        #3;
+
+        tb_bcd = 4'd7;
+        #3;
+
+        tb_bcd = 4'd8;
+        #3;
+ 
+        tb_bcd = 4'd9;
+        #3;
+
+        tb_bcd = 4'd10;
+        #3;
+
+        tb_bcd = 4'd11;
+        #3;
+
+        tb_bcd = 4'd12;
+        #3;
+
+        tb_bcd = 4'd13;
+        #3;
+
+        tb_bcd = 4'd14;
+        #3;
+  
+        tb_bcd = 4'd15;
+        #3;
+
+        $finish;  // end simulation, otherwise it runs indefinitely
 end
 
 endmodule
