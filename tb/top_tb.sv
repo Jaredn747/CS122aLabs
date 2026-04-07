@@ -34,53 +34,53 @@ end
 
 initial begin
     /** testbench logic goes below */
-        tb_bcd = 4'd0; 
-        #3;
+        tb_bcd = 4'd0;
+        #2;
     
         tb_bcd = 4'd1;
-        #3;
+        #2;
   
         tb_bcd = 4'd2;
-        #3;
+        #2;
         
         tb_bcd = 4'd3;
-        #3;
+        #2;
 
         tb_bcd = 4'd4;
-        #3;
+        #10;
 
         tb_bcd = 4'd5;
-        #3;
+        #10;
 
         tb_bcd = 4'd6;
-        #3;
+        #10;
 
         tb_bcd = 4'd7;
-        #3;
+        #10;
 
         tb_bcd = 4'd8;
-        #3;
+        #10;
  
         tb_bcd = 4'd9;
-        #3;
+        #10;
 
         tb_bcd = 4'd10;
-        #3;
+        #10;
 
         tb_bcd = 4'd11;
-        #3;
+        #10;
 
         tb_bcd = 4'd12;
-        #3;
+        #10;
 
         tb_bcd = 4'd13;
-        #3;
+        #10;
 
         tb_bcd = 4'd14;
-        #3;
+        #10;
   
         tb_bcd = 4'd15;
-        #3;
+        #10;
 
         $finish;  // end simulation, otherwise it runs indefinitely
 end
